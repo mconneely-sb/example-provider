@@ -5,7 +5,8 @@ name: Build
 on:
   push:
   workflow_dispatch:
-
+  repository_dispatch:
+    types: [contract_requiring_verification_published]
 env:
   PACT_BROKER_BASE_URL: ${{ vars.PACT_BROKER_BASE_URL }}
   PACT_BROKER_TOKEN: ${{ secrets.PACTFLOW_TOKEN_FOR_CI_CD_WORKSHOP }}
