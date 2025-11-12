@@ -1,0 +1,12 @@
+name: Triggered by Webhook
+
+on:
+  repository_dispatch:
+    types: [custom-event]
+
+jobs:
+  run-from-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print payload
+        run: echo "Triggered via webhook!"
